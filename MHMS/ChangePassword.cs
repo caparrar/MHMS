@@ -19,11 +19,14 @@ namespace MHMS
     public partial class ChangePassword : Form
     {
         static string MHMS_Conn = ConfigurationManager.ConnectionStrings["MHMS.Properties.Settings.MHMS"].ConnectionString;
+        //static string MHMS_Conn = ConfigurationManager.ConnectionStrings["MHMS.Properties.Settings.MHMS2"].ConnectionString;
 
         public ChangePassword()
         {
             InitializeComponent();
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         // ---> Place holder for email
         private void Email_Enter(object sender, EventArgs e)
@@ -35,14 +38,7 @@ namespace MHMS
             }
         }
 
-        private void Email_Leave(object sender, EventArgs e)
-        {
-            if (Email.Text == "")
-            {
-                Email.Text = "Email address";
-                Email.ForeColor = Color.Gray;
-            }
-        } // end ------->
+        //====================================================================================================================>>>>>>>>>>>>
 
         // ---> Place holder for code
         private void CodeTxtBox_Enter(object sender, EventArgs e)
@@ -54,6 +50,8 @@ namespace MHMS
             }
         }
 
+        //====================================================================================================================>>>>>>>>>>>>
+
         private void CodeTxtBox_Leave(object sender, EventArgs e)
         {
             if (CodeTxtBox.Text == "")
@@ -63,12 +61,14 @@ namespace MHMS
             }
         } // end ------->
 
-        private void Emailsent()
+        //====================================================================================================================>>>>>>>>>>>>
+
+        private void SendEmail()
         {
             //Email header.
             StringBuilder builder = new StringBuilder();
             builder.AppendLine();
-            builder.Append("<h2>[TEST ONLY] Manhour Management System (MHMS) - Password Reset Code</h2>");
+            builder.Append("<h2>Manhour Management System (MHMS) - Password Reset Code</h2>");
             builder.Append("<br>" + DateTime.Now);
             builder.Append("<br>");
             builder.Append("<br>");
@@ -92,6 +92,8 @@ namespace MHMS
 
             EmailNotif(); // ---> Call out the email notification function
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         string emailto; // ---> Declared string.
         string innerString; // ---> Declared string.
@@ -117,7 +119,6 @@ namespace MHMS
                 MailMessage mail = new MailMessage("mhms@brother-biph.com.ph", emailto);
                 // mail.To.Add(new MailAddress("BIPHBPS_Appli@bicusa.onmicrosoft.com"));
                 //mail.To.Add(new MailAddress(Email.Text));
-                //mail.To.Add(new MailAddress("jessica.deocampo@brother-biph.com.ph"));
                 SmtpClient client = new SmtpClient();
                 client.Port = 25;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -134,31 +135,43 @@ namespace MHMS
                 EmailPanel.Visible = false;
                 CodePanel.Visible = true;
             }
-
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         // ---> Generate Code
         private void GenerateCode()
         {
-            if (Email.Text != "Email address")
+            
+            int maxNum = 999999;
+            int minNum = 100000;
+            Random random = new Random();
+            int randomNum = random.Next(minNum, maxNum);
+            RandomNumLabel.Text = randomNum.ToString();
+            CodeLabel.Text = randomNum.ToString();
+            
+        }
+
+        //====================================================================================================================>>>>>>>>>>>>
+
+        private void ContinueButton_Click(object sender, EventArgs e)
+        {
+            if (Email.Text == "")
             {
-                int maxNum = 10000;
-                int minNum = 1000;
-                Random random = new Random();
-                int randomNum = random.Next(minNum, maxNum);
-                RandomNumLabel.Text = randomNum.ToString();
-                CodeLabel.Text = randomNum.ToString();
+                MessageBox.Show("Please type your email address!", "");
+            }
+            else
+            {
+                if (Email.Text != "Email address")
+                {
+                    GenerateCode();
+                    SendEmail();
+                }
             }
            
         }
 
-        
-        private void ContinueButton_Click(object sender, EventArgs e)
-        {
-            GenerateCode();
-            Emailsent();
-
-        }
+        //====================================================================================================================>>>>>>>>>>>>
 
         public static string UserEmail = "";
         private void ChangePassword_Load(object sender, EventArgs e)
@@ -169,12 +182,15 @@ namespace MHMS
             ResetPasswordPanel.Visible = false;
 
             Email.Text = LoginForm.EmailAddress;
+            Email.ForeColor = Color.FromArgb(72, 91, 232);
+            
             //EmailPanel.Location = new Point(
             //this.ClientSize.Width / 2 - EmailPanel.Size.Width / 2,
             //this.ClientSize.Height / 2 - EmailPanel.Size.Height / 2);
             //EmailPanel.Anchor = AnchorStyles.None;
         }
 
+        //====================================================================================================================>>>>>>>>>>>>
         private void SubmitCodeButton_Click(object sender, EventArgs e)
         {
             if (CodeTxtBox.Text == "")
@@ -195,6 +211,8 @@ namespace MHMS
             }
         }
 
+        //====================================================================================================================>>>>>>>>>>>>
+
         private void HidePasswordButton_Click(object sender, EventArgs e)
         {
 
@@ -211,6 +229,8 @@ namespace MHMS
             HidePasswordButton.SendToBack();
         }
 
+        //====================================================================================================================>>>>>>>>>>>>
+
         private void ShowPasswordButton_Click(object sender, EventArgs e)
         {
             if (Password.PasswordChar == '•')
@@ -225,6 +245,8 @@ namespace MHMS
             ShowPasswordButton.SendToBack();
             HidePasswordButton.BringToFront();
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         private void HideConfirmPassword_Click(object sender, EventArgs e)
         {
@@ -241,6 +263,8 @@ namespace MHMS
             HideConfirmPassword.SendToBack();
         }
 
+        //====================================================================================================================>>>>>>>>>>>>
+
         private void ShowConfirmPassword_Click(object sender, EventArgs e)
         {
             if (ConfirmPassword.PasswordChar == '•')
@@ -255,6 +279,8 @@ namespace MHMS
             ShowConfirmPassword.SendToBack();
             HideConfirmPassword.BringToFront();
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         private void ResetPassword()
         {
@@ -282,6 +308,7 @@ namespace MHMS
                 {
                     con.Open();
                 }
+
                 SqlCommand ChangePassword = new SqlCommand("SP_ChangePassword", con);
                 ChangePassword.CommandType = CommandType.StoredProcedure;
                 ChangePassword.Parameters.AddWithValue("@Password", Password.Text);
@@ -289,14 +316,32 @@ namespace MHMS
                 ChangePassword.ExecuteNonQuery();
                 con.Close();
 
-                MessageBox.Show("Your password is successfuly changed!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Your password is successfuly changed! Please login and use your new password.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Application.Restart();
             }
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
             ResetPassword();
+            //this.Close();
+            //LoginForm loginForm = new LoginForm();
+            //loginForm.ShowDialog();
         }
 
+        //====================================================================================================================>>>>>>>>>>>>
+
+        private void BackToLoginForm_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Close();
+            LoginForm login = new LoginForm();
+            login.ShowDialog();
+        }
+
+        //====================================================================================================================>>>>>>>>>>>>
     }
 }

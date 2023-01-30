@@ -12,6 +12,25 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\apbiphsh04\B1_BIPHCommon\19_BPS\02_Application\FY2022\MHMS\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\apbiphsh04\B1_BIPHCommon\19_BPS\02_Application\FY2022\MHMS\</UpdateUrl>
+    <MinimumRequiredVersion>1.42.1.56</MinimumRequiredVersion>
+    <ApplicationRevision>154</ApplicationRevision>
+    <ApplicationVersion>1.153.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +51,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1B0928E9A1FD2C99FC889C0674C57A8B1A8F4AF7</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MHMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Picture2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ColorCode, Version=1.0.1.62759, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ColorCode.1.0.1\lib\ColorCode.dll</HintPath>
@@ -45,6 +82,10 @@
       <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
@@ -56,6 +97,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,6 +109,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="Z.Dapper.Plus, Version=4.0.37.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Z.Dapper.Plus.4.0.37\lib\net45\Z.Dapper.Plus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddCOPQForm.cs">
@@ -81,11 +127,42 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\Defect_Class.cs" />
+    <Compile Include="Class\MHData_Class.cs" />
+    <Compile Include="Class\PartsLossData_Class.cs" />
+    <Compile Include="COPQConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COPQConfirmationForm.Designer.cs">
+      <DependentUpon>COPQConfirmationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MH_Management_SystemDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MH_Management_SystemDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MH_Management_SystemDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MH_Management_SystemDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SectionMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SectionMenuForm.Designer.cs">
+      <DependentUpon>SectionMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Top5DefectRecurrenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Top5DefectRecurrenceForm.Designer.cs">
+      <DependentUpon>Top5DefectRecurrenceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ApplicationForm.cs">
       <SubType>Form</SubType>
@@ -123,6 +200,12 @@
     <Compile Include="Forms\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DashboardForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForm2.Designer.cs">
+      <DependentUpon>DashboardForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DPRForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,19 +236,112 @@
     <Compile Include="Forms\TargetSettingForm.Designer.cs">
       <DependentUpon>TargetSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateDataForm.cs">
+    <Compile Include="LossFactorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateDataForm.Designer.cs">
-      <DependentUpon>UpdateDataForm.cs</DependentUpon>
+    <Compile Include="LossFactorForm.Designer.cs">
+      <DependentUpon>LossFactorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LossRateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LossRateForm.Designer.cs">
+      <DependentUpon>LossRateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MH_Management_SystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MH_Management_SystemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MH_Management_SystemDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MH_Management_SystemDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MonthlyDisposalBudget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthlyDisposalBudget.Designer.cs">
+      <DependentUpon>MonthlyDisposalBudget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthlyStandardManHour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthlyStandardManHour.Designer.cs">
+      <DependentUpon>MonthlyStandardManHour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessInChargeConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessInChargeConfirmationForm.Designer.cs">
+      <DependentUpon>ProcessInChargeConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessInchargeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessInchargeForm.Designer.cs">
+      <DependentUpon>ProcessInchargeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RejectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RejectionForm.Designer.cs">
+      <DependentUpon>RejectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMHLoss2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateMHLoss2.Designer.cs">
+      <DependentUpon>UpdateMHLoss2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePartsLossData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePartsLossData.Designer.cs">
+      <DependentUpon>UpdatePartsLossData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMHLossData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateMHLossData.Designer.cs">
+      <DependentUpon>UpdateMHLossData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePartsLossData2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePartsLossData2.Designer.cs">
+      <DependentUpon>UpdatePartsLossData2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateSection.Designer.cs">
+      <DependentUpon>UpdateSection.cs</DependentUpon>
     </Compile>
     <Compile Include="UploadTemplateForm.cs">
       <SubType>Form</SubType>
@@ -185,8 +361,17 @@
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="COPQConfirmationForm.resx">
+      <DependentUpon>COPQConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SectionMenuForm.resx">
+      <DependentUpon>SectionMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Top5DefectRecurrenceForm.resx">
+      <DependentUpon>Top5DefectRecurrenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
@@ -206,6 +391,9 @@
     <EmbeddedResource Include="Forms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForm2.resx">
+      <DependentUpon>DashboardForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DPRForm.resx">
       <DependentUpon>DPRForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,21 +409,55 @@
     <EmbeddedResource Include="Forms\TargetSettingForm.resx">
       <DependentUpon>TargetSettingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LossFactorForm.resx">
+      <DependentUpon>LossFactorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LossRateForm.resx">
+      <DependentUpon>LossRateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyDisposalBudget.resx">
+      <DependentUpon>MonthlyDisposalBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyStandardManHour.resx">
+      <DependentUpon>MonthlyStandardManHour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessInChargeConfirmationForm.resx">
+      <DependentUpon>ProcessInChargeConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessInchargeForm.resx">
+      <DependentUpon>ProcessInchargeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="UpdateDataForm.resx">
-      <DependentUpon>UpdateDataForm.cs</DependentUpon>
+    <EmbeddedResource Include="RejectionForm.resx">
+      <DependentUpon>RejectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateMHLoss2.resx">
+      <DependentUpon>UpdateMHLoss2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePartsLossData.resx">
+      <DependentUpon>UpdatePartsLossData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateMHLossData.resx">
+      <DependentUpon>UpdateMHLossData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePartsLossData2.resx">
+      <DependentUpon>UpdatePartsLossData2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateSection.resx">
+      <DependentUpon>UpdateSection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UploadTemplateForm.resx">
       <DependentUpon>UploadTemplateForm.cs</DependentUpon>
@@ -243,6 +465,51 @@
     <EmbeddedResource Include="UserSetting.resx">
       <DependentUpon>UserSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MHMS_TemporaryKey.pfx" />
+    <None Include="MH_Management_SystemDataSet.xsc">
+      <DependentUpon>MH_Management_SystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MH_Management_SystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MH_Management_SystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MH_Management_SystemDataSet.xss">
+      <DependentUpon>MH_Management_SystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MH_Management_SystemDataSet1.xsc">
+      <DependentUpon>MH_Management_SystemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MH_Management_SystemDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MH_Management_SystemDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MH_Management_SystemDataSet1.xss">
+      <DependentUpon>MH_Management_SystemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MH_Management_SystemDataSet2.xsc">
+      <DependentUpon>MH_Management_SystemDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MH_Management_SystemDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MH_Management_SystemDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MH_Management_SystemDataSet2.xss">
+      <DependentUpon>MH_Management_SystemDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MH_Management_SystemDataSet3.xsc">
+      <DependentUpon>MH_Management_SystemDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MH_Management_SystemDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MH_Management_SystemDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MH_Management_SystemDataSet3.xss">
+      <DependentUpon>MH_Management_SystemDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -352,6 +619,77 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warning-joypixels.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Picture2.ico" />
+    <None Include="Resources\R %284%29.png" />
+    <None Include="Resources\R %283%29.png" />
+    <None Include="Resources\SANATA.gif" />
+    <None Include="Resources\Merry-Christmas-14.gif" />
+    <None Include="Resources\merry-christmas-6808.gif" />
+    <None Include="Resources\Under-construction.gif" />
+    <None Include="Resources\under-construction-graphic.gif" />
+    <None Include="Resources\maintanance.gif" />
+    <None Include="Resources\6ef3bf523c23f057f8a4fc1365ca4302.png" />
+    <None Include="Resources\Christmas-Ornament-Decoration-PNG-HD-Image.png" />
+    <None Include="Resources\Merry_Christmas_Decor_with_Gift_PNG_Clipart-30.png" />
+    <None Include="Resources\Merry-Christmas-Text-Design-Transparent.png" />
+    <None Include="Resources\switch %281%29 %281%29.ico" />
+    <None Include="Resources\house-321.ico" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\au6zh-jdcz1.ico" />
+    <None Include="Resources\switch %281%29 %281%29.png" />
+    <None Include="Resources\menu.ico" />
+    <None Include="Resources\more.ico" />
+    <None Include="Resources\choose.ico" />
+    <None Include="Resources\choose.png" />
+    <None Include="Resources\loading.ico" />
+    <None Include="Resources\logout %282%29.ico" />
+    <None Include="Resources\logout %281%29.ico" />
+    <None Include="Resources\logout %281%29.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\loading-gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel1">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

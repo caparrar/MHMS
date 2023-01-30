@@ -43,6 +43,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.RadioButtonHeaderYes = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.BrowseButton = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UploadedUserDataGrid)).BeginInit();
@@ -95,7 +96,7 @@
             this.panel2.Controls.Add(this.FilePath);
             this.panel2.Location = new System.Drawing.Point(12, 57);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(750, 35);
+            this.panel2.Size = new System.Drawing.Size(677, 35);
             this.panel2.TabIndex = 7;
             // 
             // ChooseFileButton
@@ -119,7 +120,7 @@
             this.FilePath.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FilePath.Location = new System.Drawing.Point(96, 7);
             this.FilePath.Name = "FilePath";
-            this.FilePath.Size = new System.Drawing.Size(649, 18);
+            this.FilePath.Size = new System.Drawing.Size(573, 18);
             this.FilePath.TabIndex = 1;
             // 
             // UploadUserButton
@@ -187,21 +188,38 @@
             this.label3.Text = "Header";
             this.label3.Visible = false;
             // 
+            // BrowseButton
+            // 
+            this.BrowseButton.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.BrowseButton.FlatAppearance.BorderSize = 0;
+            this.BrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BrowseButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrowseButton.ForeColor = System.Drawing.Color.White;
+            this.BrowseButton.Location = new System.Drawing.Point(688, 57);
+            this.BrowseButton.Name = "BrowseButton";
+            this.BrowseButton.Size = new System.Drawing.Size(73, 35);
+            this.BrowseButton.TabIndex = 28;
+            this.BrowseButton.Text = "Browse";
+            this.BrowseButton.UseVisualStyleBackColor = false;
+            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            // 
             // UploadTemplateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(774, 424);
+            this.Controls.Add(this.BrowseButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.RadioButtonHeaderYes);
             this.Controls.Add(this.UploadedUserDataGrid);
             this.Controls.Add(this.UploadUserButton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.TopPanel);
+            this.MaximizeBox = false;
             this.Name = "UploadTemplateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UploadTemplateForm";
+            this.Text = "Upload Template Form";
             this.Load += new System.EventHandler(this.UploadTemplateForm_Load);
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
@@ -227,5 +245,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.RadioButton RadioButtonHeaderYes;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BrowseButton;
     }
 }

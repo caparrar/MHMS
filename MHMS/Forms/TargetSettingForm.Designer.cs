@@ -28,21 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SectionDropdownPanel = new System.Windows.Forms.Panel();
+            this.SectionDropdownList = new System.Windows.Forms.ComboBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.FiscalYearDropdown = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.DisposalBudgetTemplateButton = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.BrowseButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.UploadButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ChooseFileButton = new System.Windows.Forms.Button();
@@ -54,35 +62,117 @@
             this.TargetSettingDataGrid = new System.Windows.Forms.DataGridView();
             this.LabelHeader = new System.Windows.Forms.Panel();
             this.TitleCategory = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.DropdownValue = new System.Windows.Forms.ComboBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.HistoryDataGrid = new System.Windows.Forms.DataGridView();
+            this.ManhourTemplateButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.SectionDropdownPanel.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TargetSettingDataGrid)).BeginInit();
-            this.LabelHeader.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HistoryDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.SectionDropdownPanel);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.UploadButton);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.panel9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(941, 100);
+            this.panel1.Size = new System.Drawing.Size(1314, 96);
             this.panel1.TabIndex = 0;
+            // 
+            // SectionDropdownPanel
+            // 
+            this.SectionDropdownPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SectionDropdownPanel.Controls.Add(this.SectionDropdownList);
+            this.SectionDropdownPanel.Controls.Add(this.panel12);
+            this.SectionDropdownPanel.Location = new System.Drawing.Point(333, 57);
+            this.SectionDropdownPanel.Name = "SectionDropdownPanel";
+            this.SectionDropdownPanel.Size = new System.Drawing.Size(328, 35);
+            this.SectionDropdownPanel.TabIndex = 9;
+            this.SectionDropdownPanel.Visible = false;
+            // 
+            // SectionDropdownList
+            // 
+            this.SectionDropdownList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.SectionDropdownList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.SectionDropdownList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SectionDropdownList.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SectionDropdownList.FormattingEnabled = true;
+            this.SectionDropdownList.Items.AddRange(new object[] {
+            "Development Engineering",
+            "Equipment Engineering",
+            "General Affairs",
+            "Incoming Quality Control",
+            "Information Technology",
+            "Ink Cartridge",
+            "Ink Head",
+            "Logistics Control",
+            "Material Purchasing 2",
+            "Molding Production",
+            "PCB Assembly",
+            "Printer",
+            "Production Control",
+            "Production Engineering",
+            "P-Touch",
+            "Quality Assurance",
+            "Quality Assurance",
+            "Supplier Quality Control",
+            "Tape Cassette"});
+            this.SectionDropdownList.Location = new System.Drawing.Point(96, 2);
+            this.SectionDropdownList.Name = "SectionDropdownList";
+            this.SectionDropdownList.Size = new System.Drawing.Size(227, 28);
+            this.SectionDropdownList.TabIndex = 2;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
+            this.panel12.CausesValidation = false;
+            this.panel12.Controls.Add(this.label4);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(90, 33);
+            this.panel12.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 33);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Section";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.FiscalYearDropdown);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(1, 58);
+            this.panel3.Location = new System.Drawing.Point(1, 57);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(319, 35);
             this.panel3.TabIndex = 8;
@@ -96,7 +186,7 @@
             this.FiscalYearDropdown.FormattingEnabled = true;
             this.FiscalYearDropdown.Location = new System.Drawing.Point(82, 2);
             this.FiscalYearDropdown.Name = "FiscalYearDropdown";
-            this.FiscalYearDropdown.Size = new System.Drawing.Size(232, 28);
+            this.FiscalYearDropdown.Size = new System.Drawing.Size(231, 28);
             this.FiscalYearDropdown.TabIndex = 2;
             this.FiscalYearDropdown.TextChanged += new System.EventHandler(this.FiscalYearDropdown_TextChanged);
             // 
@@ -116,11 +206,73 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(2, 7);
+            this.label1.Location = new System.Drawing.Point(1, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fiscal Year";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.ManhourTemplateButton);
+            this.panel11.Controls.Add(this.DisposalBudgetTemplateButton);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel11.Location = new System.Drawing.Point(775, 56);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(539, 40);
+            this.panel11.TabIndex = 1;
+            // 
+            // DisposalBudgetTemplateButton
+            // 
+            this.DisposalBudgetTemplateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.DisposalBudgetTemplateButton.FlatAppearance.BorderSize = 0;
+            this.DisposalBudgetTemplateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DisposalBudgetTemplateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisposalBudgetTemplateButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.DisposalBudgetTemplateButton.Location = new System.Drawing.Point(292, 2);
+            this.DisposalBudgetTemplateButton.Name = "DisposalBudgetTemplateButton";
+            this.DisposalBudgetTemplateButton.Size = new System.Drawing.Size(247, 35);
+            this.DisposalBudgetTemplateButton.TabIndex = 29;
+            this.DisposalBudgetTemplateButton.Text = "OPEN DISPOSAL BUDGET TEMPLATE";
+            this.DisposalBudgetTemplateButton.UseVisualStyleBackColor = false;
+            this.DisposalBudgetTemplateButton.Click += new System.EventHandler(this.DisposalBudgetTemplateButton_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.BrowseButton);
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Controls.Add(this.UploadButton);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1314, 56);
+            this.panel9.TabIndex = 0;
+            // 
+            // BrowseButton
+            // 
+            this.BrowseButton.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.BrowseButton.FlatAppearance.BorderSize = 0;
+            this.BrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BrowseButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrowseButton.ForeColor = System.Drawing.Color.White;
+            this.BrowseButton.Location = new System.Drawing.Point(829, 0);
+            this.BrowseButton.Name = "BrowseButton";
+            this.BrowseButton.Size = new System.Drawing.Size(62, 35);
+            this.BrowseButton.TabIndex = 28;
+            this.BrowseButton.Text = "Browse";
+            this.BrowseButton.UseVisualStyleBackColor = false;
+            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(105)))), ((int)(((byte)(22)))));
+            this.label3.Location = new System.Drawing.Point(330, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(298, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "NOTE: The sheet name should be same as selected category";
             // 
             // UploadButton
             // 
@@ -129,7 +281,7 @@
             this.UploadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UploadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UploadButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
-            this.UploadButton.Location = new System.Drawing.Point(797, 1);
+            this.UploadButton.Location = new System.Drawing.Point(903, 0);
             this.UploadButton.Name = "UploadButton";
             this.UploadButton.Size = new System.Drawing.Size(144, 35);
             this.UploadButton.TabIndex = 7;
@@ -142,9 +294,9 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.ChooseFileButton);
             this.panel2.Controls.Add(this.FilePath);
-            this.panel2.Location = new System.Drawing.Point(332, 1);
+            this.panel2.Location = new System.Drawing.Point(343, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(459, 35);
+            this.panel2.Size = new System.Drawing.Size(496, 35);
             this.panel2.TabIndex = 6;
             // 
             // ChooseFileButton
@@ -165,10 +317,10 @@
             // FilePath
             // 
             this.FilePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FilePath.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FilePath.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FilePath.Location = new System.Drawing.Point(96, 7);
             this.FilePath.Name = "FilePath";
-            this.FilePath.Size = new System.Drawing.Size(358, 18);
+            this.FilePath.Size = new System.Drawing.Size(394, 18);
             this.FilePath.TabIndex = 1;
             // 
             // panel5
@@ -176,7 +328,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.CategoryDropdown);
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(10, 11);
+            this.panel5.Location = new System.Drawing.Point(10, 10);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(319, 35);
             this.panel5.TabIndex = 5;
@@ -186,17 +338,20 @@
             this.CategoryDropdown.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CategoryDropdown.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CategoryDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CategoryDropdown.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryDropdown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CategoryDropdown.FormattingEnabled = true;
             this.CategoryDropdown.Items.AddRange(new object[] {
             "Efficiency",
             "MH Loss Rate",
             "Parts Loss Rate",
-            "COPQ Manpower Rate"});
+            "COPQ Manpower Rate",
+            "Disposal Budget",
+            "Standard Man-Hour"});
             this.CategoryDropdown.Location = new System.Drawing.Point(83, 2);
             this.CategoryDropdown.Name = "CategoryDropdown";
-            this.CategoryDropdown.Size = new System.Drawing.Size(231, 28);
+            this.CategoryDropdown.Size = new System.Drawing.Size(231, 29);
             this.CategoryDropdown.TabIndex = 1;
+            this.CategoryDropdown.TextChanged += new System.EventHandler(this.CategoryDropdown_TextChanged);
             // 
             // panel6
             // 
@@ -224,147 +379,251 @@
             // 
             this.TargetSettingDataGrid.AllowUserToAddRows = false;
             this.TargetSettingDataGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.TargetSettingDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(219)))), ((int)(((byte)(232)))));
+            this.TargetSettingDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.TargetSettingDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TargetSettingDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.TargetSettingDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TargetSettingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TargetSettingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.TargetSettingDataGrid.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TargetSettingDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TargetSettingDataGrid.DefaultCellStyle = dataGridViewCellStyle21;
             this.TargetSettingDataGrid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TargetSettingDataGrid.Location = new System.Drawing.Point(10, 110);
+            this.TargetSettingDataGrid.Location = new System.Drawing.Point(10, 106);
             this.TargetSettingDataGrid.Name = "TargetSettingDataGrid";
             this.TargetSettingDataGrid.ReadOnly = true;
             this.TargetSettingDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TargetSettingDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TargetSettingDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.TargetSettingDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            this.TargetSettingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            this.TargetSettingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle23;
             this.TargetSettingDataGrid.RowTemplate.Height = 42;
             this.TargetSettingDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.TargetSettingDataGrid.Size = new System.Drawing.Size(941, 210);
+            this.TargetSettingDataGrid.Size = new System.Drawing.Size(1314, 271);
             this.TargetSettingDataGrid.TabIndex = 6;
             this.TargetSettingDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.TargetSettingDataGrid_CellFormatting);
             this.TargetSettingDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.TargetSettingDataGrid_CellMouseClick);
+            this.TargetSettingDataGrid.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.TargetSettingDataGrid_ColumnHeaderMouseClick);
             // 
             // LabelHeader
             // 
-            this.LabelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
-            this.LabelHeader.Controls.Add(this.TitleCategory);
+            this.LabelHeader.BackColor = System.Drawing.SystemColors.Window;
             this.LabelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelHeader.Location = new System.Drawing.Point(10, 320);
+            this.LabelHeader.Location = new System.Drawing.Point(10, 377);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(941, 42);
+            this.LabelHeader.Size = new System.Drawing.Size(1314, 42);
             this.LabelHeader.TabIndex = 7;
             // 
             // TitleCategory
             // 
+            this.TitleCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
             this.TitleCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TitleCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.TitleCategory.Location = new System.Drawing.Point(0, 0);
             this.TitleCategory.Name = "TitleCategory";
-            this.TitleCategory.Size = new System.Drawing.Size(941, 42);
+            this.TitleCategory.Size = new System.Drawing.Size(1314, 42);
             this.TitleCategory.TabIndex = 0;
             this.TitleCategory.Text = "HISTORY TABLE";
             this.TitleCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel19
+            // 
+            this.panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel19.Controls.Add(this.panel8);
+            this.panel19.Controls.Add(this.panel20);
+            this.panel19.Controls.Add(this.DropdownValue);
+            this.panel19.Location = new System.Drawing.Point(10, 379);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(195, 35);
+            this.panel19.TabIndex = 23;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
+            this.panel8.CausesValidation = false;
+            this.panel8.Controls.Add(this.label5);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(136, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(57, 33);
+            this.panel8.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(4, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 19);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "entries";
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
+            this.panel20.CausesValidation = false;
+            this.panel20.Controls.Add(this.label6);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel20.Location = new System.Drawing.Point(0, 0);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(57, 33);
+            this.panel20.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(4, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 19);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Show";
+            // 
+            // DropdownValue
+            // 
+            this.DropdownValue.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.DropdownValue.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.DropdownValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DropdownValue.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DropdownValue.ForeColor = System.Drawing.Color.Gray;
+            this.DropdownValue.FormattingEnabled = true;
+            this.DropdownValue.Items.AddRange(new object[] {
+            "10",
+            "50",
+            "100",
+            "All"});
+            this.DropdownValue.Location = new System.Drawing.Point(63, 3);
+            this.DropdownValue.Name = "DropdownValue";
+            this.DropdownValue.Size = new System.Drawing.Size(67, 28);
+            this.DropdownValue.TabIndex = 2;
+            this.DropdownValue.Text = "10";
+            this.DropdownValue.TextChanged += new System.EventHandler(this.DropdownValue_TextChanged);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.TitleCategory);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(10, 419);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1314, 42);
+            this.panel7.TabIndex = 24;
             // 
             // HistoryDataGrid
             // 
             this.HistoryDataGrid.AllowUserToAddRows = false;
             this.HistoryDataGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.HistoryDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(219)))), ((int)(((byte)(232)))));
+            this.HistoryDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
             this.HistoryDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.HistoryDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.HistoryDataGrid.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.HistoryDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.HistoryDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.HistoryDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.HistoryDataGrid.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.HistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.HistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle26;
             this.HistoryDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HistoryDataGrid.Location = new System.Drawing.Point(10, 362);
+            this.HistoryDataGrid.Location = new System.Drawing.Point(10, 461);
             this.HistoryDataGrid.Name = "HistoryDataGrid";
             this.HistoryDataGrid.ReadOnly = true;
             this.HistoryDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.HistoryDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.HistoryDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            this.HistoryDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            this.HistoryDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle27;
             this.HistoryDataGrid.RowTemplate.Height = 42;
-            this.HistoryDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.HistoryDataGrid.Size = new System.Drawing.Size(941, 88);
-            this.HistoryDataGrid.TabIndex = 8;
-            this.HistoryDataGrid.Visible = false;
+            this.HistoryDataGrid.Size = new System.Drawing.Size(1314, 83);
+            this.HistoryDataGrid.TabIndex = 25;
+            this.HistoryDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.HistoryDataGrid_CellFormatting);
+            // 
+            // ManhourTemplateButton
+            // 
+            this.ManhourTemplateButton.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.ManhourTemplateButton.FlatAppearance.BorderSize = 0;
+            this.ManhourTemplateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ManhourTemplateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManhourTemplateButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.ManhourTemplateButton.Location = new System.Drawing.Point(23, 2);
+            this.ManhourTemplateButton.Name = "ManhourTemplateButton";
+            this.ManhourTemplateButton.Size = new System.Drawing.Size(262, 35);
+            this.ManhourTemplateButton.TabIndex = 30;
+            this.ManhourTemplateButton.Text = "OPEN STANDARD MANHOUR TEMPLATE";
+            this.ManhourTemplateButton.UseVisualStyleBackColor = false;
+            this.ManhourTemplateButton.Click += new System.EventHandler(this.ManhourTemplateButton_Click);
             // 
             // TargetSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(961, 460);
+            this.ClientSize = new System.Drawing.Size(1334, 554);
             this.Controls.Add(this.HistoryDataGrid);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel19);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.LabelHeader);
             this.Controls.Add(this.TargetSettingDataGrid);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Name = "TargetSettingForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Target Setting";
             this.Load += new System.EventHandler(this.TargetSettingForm_Load);
             this.panel1.ResumeLayout(false);
+            this.SectionDropdownPanel.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TargetSettingDataGrid)).EndInit();
-            this.LabelHeader.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HistoryDataGrid)).EndInit();
             this.ResumeLayout(false);
 
@@ -387,7 +646,25 @@
         private System.Windows.Forms.ComboBox CategoryDropdown;
         private System.Windows.Forms.DataGridView TargetSettingDataGrid;
         private System.Windows.Forms.Panel LabelHeader;
-        private System.Windows.Forms.DataGridView HistoryDataGrid;
         private System.Windows.Forms.Label TitleCategory;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BrowseButton;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox DropdownValue;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.DataGridView HistoryDataGrid;
+        private System.Windows.Forms.Panel SectionDropdownPanel;
+        private System.Windows.Forms.ComboBox SectionDropdownList;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button DisposalBudgetTemplateButton;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button ManhourTemplateButton;
+        //private MH_Management_SystemDataSetTableAdapters.ApproverSettingTableAdapter approverSettingTableAdapter;
     }
 }

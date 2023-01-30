@@ -47,12 +47,15 @@
             this.ContinueButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.CodePanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.CodeLabel = new System.Windows.Forms.Label();
             this.CodeTxtBox = new System.Windows.Forms.TextBox();
             this.SubmitCodeButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ResetPasswordPanel = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.BackToLoginForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HidePasswordButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPasswordButton)).BeginInit();
@@ -229,22 +232,23 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(373, 381);
+            this.label7.Location = new System.Drawing.Point(377, 381);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
+            this.label7.Size = new System.Drawing.Size(30, 13);
             this.label7.TabIndex = 22;
-            this.label7.Text = "1 of 3";
+            this.label7.Text = "1 / 3";
             // 
             // RandomNumLabel
             // 
             this.RandomNumLabel.AutoSize = true;
             this.RandomNumLabel.BackColor = System.Drawing.Color.Transparent;
             this.RandomNumLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RandomNumLabel.Location = new System.Drawing.Point(11, 377);
+            this.RandomNumLabel.Location = new System.Drawing.Point(11, 362);
             this.RandomNumLabel.Name = "RandomNumLabel";
             this.RandomNumLabel.Size = new System.Drawing.Size(113, 17);
             this.RandomNumLabel.TabIndex = 20;
             this.RandomNumLabel.Text = "Random Number";
+            this.RandomNumLabel.Visible = false;
             // 
             // Email
             // 
@@ -258,7 +262,6 @@
             this.Email.TabIndex = 21;
             this.Email.Text = "Email address";
             this.Email.Enter += new System.EventHandler(this.Email_Enter);
-            this.Email.Leave += new System.EventHandler(this.Email_Leave);
             // 
             // ContinueButton
             // 
@@ -281,7 +284,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
-            this.label4.Location = new System.Drawing.Point(67, 182);
+            this.label4.Location = new System.Drawing.Point(67, 179);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(286, 17);
             this.label4.TabIndex = 19;
@@ -292,6 +295,7 @@
             this.CodePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.CodePanel.BackgroundImage = global::MHMS.Properties.Resources.emailpanel2_bg;
             this.CodePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CodePanel.Controls.Add(this.label5);
             this.CodePanel.Controls.Add(this.CodeLabel);
             this.CodePanel.Controls.Add(this.CodeTxtBox);
             this.CodePanel.Controls.Add(this.SubmitCodeButton);
@@ -301,6 +305,16 @@
             this.CodePanel.Name = "CodePanel";
             this.CodePanel.Size = new System.Drawing.Size(417, 413);
             this.CodePanel.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(377, 380);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "2 / 3";
             // 
             // CodeLabel
             // 
@@ -312,6 +326,7 @@
             this.CodeLabel.Size = new System.Drawing.Size(113, 17);
             this.CodeLabel.TabIndex = 20;
             this.CodeLabel.Text = "Random Number";
+            this.CodeLabel.Visible = false;
             // 
             // CodeTxtBox
             // 
@@ -368,6 +383,7 @@
             // ResetPasswordPanel
             // 
             this.ResetPasswordPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ResetPasswordPanel.Controls.Add(this.label8);
             this.ResetPasswordPanel.Controls.Add(this.label1);
             this.ResetPasswordPanel.Controls.Add(this.pictureBox1);
             this.ResetPasswordPanel.Controls.Add(this.label2);
@@ -384,6 +400,30 @@
             this.ResetPasswordPanel.Size = new System.Drawing.Size(417, 413);
             this.ResetPasswordPanel.TabIndex = 23;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(376, 381);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "3 / 3";
+            // 
+            // BackToLoginForm
+            // 
+            this.BackToLoginForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(63)))), ((int)(((byte)(184)))));
+            this.BackToLoginForm.FlatAppearance.BorderSize = 0;
+            this.BackToLoginForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackToLoginForm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackToLoginForm.Location = new System.Drawing.Point(12, 12);
+            this.BackToLoginForm.Name = "BackToLoginForm";
+            this.BackToLoginForm.Size = new System.Drawing.Size(54, 23);
+            this.BackToLoginForm.TabIndex = 24;
+            this.BackToLoginForm.Text = "Back";
+            this.BackToLoginForm.UseVisualStyleBackColor = false;
+            this.BackToLoginForm.Click += new System.EventHandler(this.BackToLoginForm_Click);
+            // 
             // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,9 +431,10 @@
             this.BackgroundImage = global::MHMS.Properties.Resources.mhlogin_bg1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1232, 614);
+            this.Controls.Add(this.BackToLoginForm);
+            this.Controls.Add(this.EmailPanel);
             this.Controls.Add(this.CodePanel);
             this.Controls.Add(this.ResetPasswordPanel);
-            this.Controls.Add(this.EmailPanel);
             this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change Password";
@@ -442,5 +483,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel ResetPasswordPanel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button BackToLoginForm;
     }
 }

@@ -33,35 +33,42 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.TypeDropdown = new System.Windows.Forms.ComboBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.ApproverSettingDataGrid = new System.Windows.Forms.DataGridView();
-            this.SaveSectionButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Section = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.LossFactorButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.DownloadTemplateButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.UploadTemplateButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ApproverSettingDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.ApproverSettingDataGrid);
-            this.panel1.Controls.Add(this.SaveSectionButton);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -71,11 +78,58 @@
             this.panel1.Size = new System.Drawing.Size(961, 460);
             this.panel1.TabIndex = 0;
             // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.TypeDropdown);
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Location = new System.Drawing.Point(335, 10);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(189, 35);
+            this.panel8.TabIndex = 7;
+            // 
+            // TypeDropdown
+            // 
+            this.TypeDropdown.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.TypeDropdown.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TypeDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TypeDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TypeDropdown.FormattingEnabled = true;
+            this.TypeDropdown.Items.AddRange(new object[] {
+            "Prod",
+            "Non-Prod"});
+            this.TypeDropdown.Location = new System.Drawing.Point(63, 5);
+            this.TypeDropdown.Name = "TypeDropdown";
+            this.TypeDropdown.Size = new System.Drawing.Size(121, 23);
+            this.TypeDropdown.TabIndex = 3;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
+            this.panel9.CausesValidation = false;
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(57, 33);
+            this.panel9.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(9, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 19);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Type";
+            // 
             // ApproverSettingDataGrid
             // 
             this.ApproverSettingDataGrid.AllowUserToAddRows = false;
             this.ApproverSettingDataGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(219)))), ((int)(((byte)(232)))));
             this.ApproverSettingDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ApproverSettingDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ApproverSettingDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -89,11 +143,11 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ApproverSettingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ApproverSettingDataGrid.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ApproverSettingDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
@@ -108,23 +162,9 @@
             this.ApproverSettingDataGrid.RowTemplate.Height = 42;
             this.ApproverSettingDataGrid.Size = new System.Drawing.Size(941, 339);
             this.ApproverSettingDataGrid.TabIndex = 4;
+            this.ApproverSettingDataGrid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ApproverSettingDataGrid_CellContentDoubleClick);
             this.ApproverSettingDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ApproverSettingDataGrid_CellFormatting);
             this.ApproverSettingDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ApproverSettingDataGrid_CellMouseClick);
-            // 
-            // SaveSectionButton
-            // 
-            this.SaveSectionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.SaveSectionButton.FlatAppearance.BorderSize = 0;
-            this.SaveSectionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveSectionButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveSectionButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.SaveSectionButton.Location = new System.Drawing.Point(335, 10);
-            this.SaveSectionButton.Name = "SaveSectionButton";
-            this.SaveSectionButton.Size = new System.Drawing.Size(92, 35);
-            this.SaveSectionButton.TabIndex = 1;
-            this.SaveSectionButton.Text = "SAVE";
-            this.SaveSectionButton.UseVisualStyleBackColor = false;
-            this.SaveSectionButton.Click += new System.EventHandler(this.SaveSectionButton_Click);
             // 
             // panel2
             // 
@@ -169,21 +209,62 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.LossFactorButton);
+            this.panel4.Controls.Add(this.SaveButton);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.DownloadTemplateButton);
-            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.UploadTemplateButton);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(10, 10);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(941, 101);
             this.panel4.TabIndex = 3;
             // 
+            // LossFactorButton
+            // 
+            this.LossFactorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
+            this.LossFactorButton.FlatAppearance.BorderSize = 0;
+            this.LossFactorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LossFactorButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LossFactorButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
+            this.LossFactorButton.Location = new System.Drawing.Point(312, 61);
+            this.LossFactorButton.Name = "LossFactorButton";
+            this.LossFactorButton.Size = new System.Drawing.Size(144, 35);
+            this.LossFactorButton.TabIndex = 6;
+            this.LossFactorButton.Text = "Loss Factor";
+            this.LossFactorButton.UseVisualStyleBackColor = false;
+            this.LossFactorButton.Click += new System.EventHandler(this.LossFactorButton_Click);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.SaveButton.FlatAppearance.BorderSize = 0;
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SaveButton.Location = new System.Drawing.Point(520, 0);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(92, 35);
+            this.SaveButton.TabIndex = 1;
+            this.SaveButton.Text = "SAVE";
+            this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveSectionButton_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel5);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(618, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(323, 101);
+            this.panel7.TabIndex = 5;
+            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.SearchBox);
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(48, 61);
+            this.panel5.Location = new System.Drawing.Point(3, 61);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(319, 35);
             this.panel5.TabIndex = 4;
@@ -227,7 +308,7 @@
             this.DownloadTemplateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DownloadTemplateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DownloadTemplateButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
-            this.DownloadTemplateButton.Location = new System.Drawing.Point(0, 60);
+            this.DownloadTemplateButton.Location = new System.Drawing.Point(0, 61);
             this.DownloadTemplateButton.Name = "DownloadTemplateButton";
             this.DownloadTemplateButton.Size = new System.Drawing.Size(144, 35);
             this.DownloadTemplateButton.TabIndex = 2;
@@ -235,29 +316,20 @@
             this.DownloadTemplateButton.UseVisualStyleBackColor = false;
             this.DownloadTemplateButton.Click += new System.EventHandler(this.DownloadTemplateButton_Click);
             // 
-            // button3
+            // UploadTemplateButton
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(217)))), ((int)(((byte)(167)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
-            this.button3.Location = new System.Drawing.Point(156, 61);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 35);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Upload Template";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.panel5);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(574, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(367, 101);
-            this.panel7.TabIndex = 5;
+            this.UploadTemplateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(217)))), ((int)(((byte)(167)))));
+            this.UploadTemplateButton.FlatAppearance.BorderSize = 0;
+            this.UploadTemplateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UploadTemplateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UploadTemplateButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
+            this.UploadTemplateButton.Location = new System.Drawing.Point(156, 61);
+            this.UploadTemplateButton.Name = "UploadTemplateButton";
+            this.UploadTemplateButton.Size = new System.Drawing.Size(144, 35);
+            this.UploadTemplateButton.TabIndex = 3;
+            this.UploadTemplateButton.Text = "Upload Template";
+            this.UploadTemplateButton.UseVisualStyleBackColor = false;
+            this.UploadTemplateButton.Click += new System.EventHandler(this.UploadTemplateButton_Click);
             // 
             // ApproverSettingForm
             // 
@@ -269,17 +341,20 @@
             this.Text = "Approver Setting";
             this.Load += new System.EventHandler(this.ApproverSettingForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ApproverSettingDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -290,7 +365,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button DownloadTemplateButton;
-        private System.Windows.Forms.Button SaveSectionButton;
+        private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.TextBox Section;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
@@ -299,7 +374,12 @@
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button UploadTemplateButton;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button LossFactorButton;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox TypeDropdown;
     }
 }

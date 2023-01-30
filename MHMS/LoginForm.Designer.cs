@@ -39,6 +39,7 @@
             this.ShowPasswordEyeButton = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SystemVersionText = new System.Windows.Forms.Label();
             this.HidePasswordEyeButton = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPasswordEyeButton)).BeginInit();
@@ -114,20 +115,22 @@
             this.SignInButton.Location = new System.Drawing.Point(421, 427);
             this.SignInButton.Name = "SignInButton";
             this.SignInButton.Size = new System.Drawing.Size(390, 37);
-            this.SignInButton.TabIndex = 5;
+            this.SignInButton.TabIndex = 4;
             this.SignInButton.Text = "SIGN IN";
             this.SignInButton.UseVisualStyleBackColor = false;
             this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
+            this.SignInButton.MouseEnter += new System.EventHandler(this.SignInButton_MouseEnter);
+            this.SignInButton.MouseLeave += new System.EventHandler(this.SignInButton_MouseLeave);
             // 
             // ForgotPassword
             // 
             this.ForgotPassword.AutoSize = true;
             this.ForgotPassword.BackColor = System.Drawing.Color.Transparent;
-            this.ForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(44)))), ((int)(((byte)(47)))));
-            this.ForgotPassword.Location = new System.Drawing.Point(667, 469);
+            this.ForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForgotPassword.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.ForgotPassword.Location = new System.Drawing.Point(646, 467);
             this.ForgotPassword.Name = "ForgotPassword";
-            this.ForgotPassword.Size = new System.Drawing.Size(145, 16);
+            this.ForgotPassword.Size = new System.Drawing.Size(166, 16);
             this.ForgotPassword.TabIndex = 6;
             this.ForgotPassword.Text = "Forgot your password?";
             this.ForgotPassword.Click += new System.EventHandler(this.ForgotPassword_Click);
@@ -142,7 +145,7 @@
             this.Password.Name = "Password";
             this.Password.PasswordChar = '•';
             this.Password.Size = new System.Drawing.Size(331, 16);
-            this.Password.TabIndex = 7;
+            this.Password.TabIndex = 3;
             this.Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Password_KeyPress);
             // 
             // ShowPasswordEyeButton
@@ -167,12 +170,13 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(429, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "If you have any concern, Please call BPS-Application group local 4307 and look fo" +
+            this.label4.Text = "If you have any concern, Please call BPS-Application group local 3407 and look fo" +
     "r Arvin.";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.SystemVersionText);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 592);
@@ -180,6 +184,16 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.panel1.Size = new System.Drawing.Size(1232, 22);
             this.panel1.TabIndex = 10;
+            // 
+            // SystemVersionText
+            // 
+            this.SystemVersionText.AutoSize = true;
+            this.SystemVersionText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SystemVersionText.Location = new System.Drawing.Point(7, 0);
+            this.SystemVersionText.Name = "SystemVersionText";
+            this.SystemVersionText.Size = new System.Drawing.Size(370, 13);
+            this.SystemVersionText.TabIndex = 10;
+            this.SystemVersionText.Text = "©️ 2022 Brother Industries (Philippines) Inc. | Developed by: BPS | Version 1.0";
             // 
             // HidePasswordEyeButton
             // 
@@ -200,6 +214,7 @@
             this.BackgroundImage = global::MHMS.Properties.Resources.mhlogin_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1232, 614);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.ForgotPassword);
             this.Controls.Add(this.SignInButton);
@@ -208,13 +223,15 @@
             this.Controls.Add(this.ADID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.HidePasswordEyeButton);
             this.Controls.Add(this.ShowPasswordEyeButton);
+            this.Controls.Add(this.HidePasswordEyeButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPasswordEyeButton)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -239,5 +256,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox HidePasswordEyeButton;
+        private System.Windows.Forms.Label SystemVersionText;
     }
 }

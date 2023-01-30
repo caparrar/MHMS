@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.SideBarPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.PictureBox();
@@ -51,6 +52,7 @@
             this.TruobleChecksheetButton = new System.Windows.Forms.PictureBox();
             this.TopBarPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.AccountTypeLabel = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Button();
             this.MinimizedButton = new System.Windows.Forms.Button();
             this.MaximizeButton = new System.Windows.Forms.Button();
@@ -60,20 +62,24 @@
             this.DateTimeLabel = new System.Windows.Forms.Label();
             this.Icon = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.NotifCount = new System.Windows.Forms.Label();
+            this.UpdateSystemButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.NotificationBellButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.InitialNameButton = new System.Windows.Forms.Button();
             this.TitleChildForm = new System.Windows.Forms.Label();
             this.ShadowPanel = new System.Windows.Forms.Panel();
             this.FooterPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.SystemVersion = new System.Windows.Forms.Label();
             this.ReportDropdownTimer = new System.Windows.Forms.Timer(this.components);
             this.SettingDropdownTimer = new System.Windows.Forms.Timer(this.components);
             this.MainPanel = new System.Windows.Forms.Panel();
             this.ChangePasswordPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.SwitchAccountButton = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
             this.ChangePasswordButton = new System.Windows.Forms.Button();
             this.UserSection = new System.Windows.Forms.Label();
             this.UserLoginName = new System.Windows.Forms.Label();
@@ -82,6 +88,8 @@
             this.DateAndTime = new System.Windows.Forms.Timer(this.components);
             this.ApplicationDropdownTimer = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SideBarPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -94,7 +102,9 @@
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Icon)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateSystemButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotificationBellButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.FooterPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
@@ -176,7 +186,7 @@
             // 
             // ApprovalButton
             // 
-            this.ApprovalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(69)))), ((int)(((byte)(105)))));
+            this.ApprovalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(56)))));
             this.ApprovalButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.ApprovalButton.FlatAppearance.BorderSize = 0;
             this.ApprovalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -196,7 +206,7 @@
             // 
             // ApplicationButton
             // 
-            this.ApplicationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(69)))), ((int)(((byte)(105)))));
+            this.ApplicationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(56)))));
             this.ApplicationButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.ApplicationButton.FlatAppearance.BorderSize = 0;
             this.ApplicationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -228,7 +238,7 @@
             this.ApplicationFormButton.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ApplicationFormButton.Size = new System.Drawing.Size(252, 40);
             this.ApplicationFormButton.TabIndex = 2;
-            this.ApplicationFormButton.Text = "           Application Form";
+            this.ApplicationFormButton.Text = "           Application Form            🔽";
             this.ApplicationFormButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ApplicationFormButton.UseVisualStyleBackColor = true;
             this.ApplicationFormButton.Click += new System.EventHandler(this.ApplicationFormButton_Click);
@@ -288,7 +298,7 @@
             // 
             // EfficiencyButton
             // 
-            this.EfficiencyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(69)))), ((int)(((byte)(105)))));
+            this.EfficiencyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(56)))));
             this.EfficiencyButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.EfficiencyButton.FlatAppearance.BorderSize = 0;
             this.EfficiencyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -308,7 +318,7 @@
             // 
             // COPQManhourLossButton
             // 
-            this.COPQManhourLossButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(69)))), ((int)(((byte)(105)))));
+            this.COPQManhourLossButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(56)))));
             this.COPQManhourLossButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.COPQManhourLossButton.FlatAppearance.BorderSize = 0;
             this.COPQManhourLossButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -328,7 +338,7 @@
             // 
             // COPQPartLossButton
             // 
-            this.COPQPartLossButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(69)))), ((int)(((byte)(105)))));
+            this.COPQPartLossButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(56)))));
             this.COPQPartLossButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.COPQPartLossButton.FlatAppearance.BorderSize = 0;
             this.COPQPartLossButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -361,7 +371,7 @@
             this.ReportButton.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ReportButton.Size = new System.Drawing.Size(252, 40);
             this.ReportButton.TabIndex = 5;
-            this.ReportButton.Text = "           Report";
+            this.ReportButton.Text = "           Reports                          🔽";
             this.ReportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ReportButton.UseVisualStyleBackColor = false;
             this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
@@ -382,7 +392,7 @@
             // 
             // TargetSettingButton
             // 
-            this.TargetSettingButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(69)))), ((int)(((byte)(105)))));
+            this.TargetSettingButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
             this.TargetSettingButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.TargetSettingButton.FlatAppearance.BorderSize = 0;
             this.TargetSettingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -402,7 +412,7 @@
             // 
             // ApproverSettingButton
             // 
-            this.ApproverSettingButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(69)))), ((int)(((byte)(105)))));
+            this.ApproverSettingButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(56)))));
             this.ApproverSettingButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.ApproverSettingButton.FlatAppearance.BorderSize = 0;
             this.ApproverSettingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -435,7 +445,7 @@
             this.SettingsButton.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.SettingsButton.Size = new System.Drawing.Size(252, 40);
             this.SettingsButton.TabIndex = 5;
-            this.SettingsButton.Text = "           Settings";
+            this.SettingsButton.Text = "           Settings                          🔽";
             this.SettingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SettingsButton.UseVisualStyleBackColor = false;
             this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
@@ -450,7 +460,7 @@
             this.TruobleChecksheetButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.TruobleChecksheetButton.TabIndex = 9;
             this.TruobleChecksheetButton.TabStop = false;
-            this.TruobleChecksheetButton.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.TruobleChecksheetButton.Click += new System.EventHandler(this.TruobleChecksheetButton_Click);
             // 
             // TopBarPanel
             // 
@@ -461,20 +471,32 @@
             this.TopBarPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopBarPanel.Location = new System.Drawing.Point(255, 0);
             this.TopBarPanel.Name = "TopBarPanel";
-            this.TopBarPanel.Size = new System.Drawing.Size(977, 25);
+            this.TopBarPanel.Size = new System.Drawing.Size(1070, 25);
             this.TopBarPanel.TabIndex = 1;
             this.TopBarPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopBarPanel_MouseDown);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.AccountTypeLabel);
             this.panel2.Controls.Add(this.CloseButton);
             this.panel2.Controls.Add(this.MinimizedButton);
             this.panel2.Controls.Add(this.MaximizeButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(777, 0);
+            this.panel2.Location = new System.Drawing.Point(870, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 25);
             this.panel2.TabIndex = 5;
+            // 
+            // AccountTypeLabel
+            // 
+            this.AccountTypeLabel.AutoSize = true;
+            this.AccountTypeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountTypeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AccountTypeLabel.Location = new System.Drawing.Point(49, 6);
+            this.AccountTypeLabel.Name = "AccountTypeLabel";
+            this.AccountTypeLabel.Size = new System.Drawing.Size(48, 15);
+            this.AccountTypeLabel.TabIndex = 5;
+            this.AccountTypeLabel.Text = "ADMIN";
             // 
             // CloseButton
             // 
@@ -525,9 +547,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SectionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SectionLabel.ForeColor = System.Drawing.Color.White;
-            this.SectionLabel.Location = new System.Drawing.Point(425, 4);
+            this.SectionLabel.Location = new System.Drawing.Point(324, 4);
             this.SectionLabel.Name = "SectionLabel";
-            this.SectionLabel.Size = new System.Drawing.Size(52, 17);
+            this.SectionLabel.Size = new System.Drawing.Size(304, 17);
             this.SectionLabel.TabIndex = 1;
             this.SectionLabel.Text = "Section";
             this.SectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -536,11 +558,11 @@
             // UserName
             // 
             this.UserName.AutoSize = true;
-            this.UserName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserName.ForeColor = System.Drawing.Color.White;
+            this.UserName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserName.ForeColor = System.Drawing.Color.Aqua;
             this.UserName.Location = new System.Drawing.Point(6, 4);
             this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(127, 17);
+            this.UserName.Size = new System.Drawing.Size(129, 17);
             this.UserName.TabIndex = 0;
             this.UserName.Text = "Welcome Mamshie!";
             // 
@@ -554,7 +576,7 @@
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(255, 25);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(977, 49);
+            this.HeaderPanel.Size = new System.Drawing.Size(1070, 49);
             this.HeaderPanel.TabIndex = 2;
             this.HeaderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderPanel_MouseDown);
             // 
@@ -565,9 +587,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DateTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.DateTimeLabel.Location = new System.Drawing.Point(394, 20);
+            this.DateTimeLabel.Location = new System.Drawing.Point(205, 22);
             this.DateTimeLabel.Name = "DateTimeLabel";
-            this.DateTimeLabel.Size = new System.Drawing.Size(117, 22);
+            this.DateTimeLabel.Size = new System.Drawing.Size(552, 22);
             this.DateTimeLabel.TabIndex = 6;
             this.DateTimeLabel.Text = "Date and Time";
             this.DateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -584,39 +606,65 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.NotifCount);
+            this.panel3.Controls.Add(this.UpdateSystemButton);
             this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.NotificationBellButton);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.InitialNameButton);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(777, 0);
+            this.panel3.Location = new System.Drawing.Point(870, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.panel3.Size = new System.Drawing.Size(200, 49);
             this.panel3.TabIndex = 1;
             // 
-            // label3
+            // NotifCount
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Red;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(67, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "10";
+            this.NotifCount.AutoSize = true;
+            this.NotifCount.BackColor = System.Drawing.Color.Red;
+            this.NotifCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotifCount.ForeColor = System.Drawing.SystemColors.Window;
+            this.NotifCount.Location = new System.Drawing.Point(80, 31);
+            this.NotifCount.Name = "NotifCount";
+            this.NotifCount.Size = new System.Drawing.Size(13, 13);
+            this.NotifCount.TabIndex = 5;
+            this.NotifCount.Text = "0";
+            // 
+            // UpdateSystemButton
+            // 
+            this.UpdateSystemButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.UpdateSystemButton.Image = ((System.Drawing.Image)(resources.GetObject("UpdateSystemButton.Image")));
+            this.UpdateSystemButton.Location = new System.Drawing.Point(26, 0);
+            this.UpdateSystemButton.Name = "UpdateSystemButton";
+            this.UpdateSystemButton.Size = new System.Drawing.Size(40, 49);
+            this.UpdateSystemButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UpdateSystemButton.TabIndex = 7;
+            this.UpdateSystemButton.TabStop = false;
+            this.toolTip1.SetToolTip(this.UpdateSystemButton, "Update System");
+            this.UpdateSystemButton.Click += new System.EventHandler(this.UpdateSystemButton_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::MHMS.Properties.Resources.bell_ring;
-            this.pictureBox2.Location = new System.Drawing.Point(81, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(66, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 49);
+            this.pictureBox2.Size = new System.Drawing.Size(15, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
+            // 
+            // NotificationBellButton
+            // 
+            this.NotificationBellButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.NotificationBellButton.Image = global::MHMS.Properties.Resources.bell_ring;
+            this.NotificationBellButton.Location = new System.Drawing.Point(81, 0);
+            this.NotificationBellButton.Name = "NotificationBellButton";
+            this.NotificationBellButton.Size = new System.Drawing.Size(40, 49);
+            this.NotificationBellButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.NotificationBellButton.TabIndex = 4;
+            this.NotificationBellButton.TabStop = false;
+            this.NotificationBellButton.Click += new System.EventHandler(this.NotificationBellButton_Click);
             // 
             // pictureBox1
             // 
@@ -635,7 +683,7 @@
             this.InitialNameButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.InitialNameButton.FlatAppearance.BorderSize = 0;
             this.InitialNameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InitialNameButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InitialNameButton.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InitialNameButton.Location = new System.Drawing.Point(129, 0);
             this.InitialNameButton.Name = "InitialNameButton";
             this.InitialNameButton.Size = new System.Drawing.Size(61, 49);
@@ -661,18 +709,18 @@
             this.ShadowPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ShadowPanel.Location = new System.Drawing.Point(255, 74);
             this.ShadowPanel.Name = "ShadowPanel";
-            this.ShadowPanel.Size = new System.Drawing.Size(977, 8);
+            this.ShadowPanel.Size = new System.Drawing.Size(1070, 8);
             this.ShadowPanel.TabIndex = 3;
             // 
             // FooterPanel
             // 
             this.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(35)))), ((int)(((byte)(53)))));
             this.FooterPanel.Controls.Add(this.label2);
-            this.FooterPanel.Controls.Add(this.label1);
+            this.FooterPanel.Controls.Add(this.SystemVersion);
             this.FooterPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FooterPanel.Location = new System.Drawing.Point(255, 587);
             this.FooterPanel.Name = "FooterPanel";
-            this.FooterPanel.Size = new System.Drawing.Size(977, 27);
+            this.FooterPanel.Size = new System.Drawing.Size(1070, 27);
             this.FooterPanel.TabIndex = 4;
             // 
             // label2
@@ -686,15 +734,17 @@
             this.label2.Text = "If you have any concern, Please call BPS-Appli group local 3407 and look for Arvi" +
     "n.";
             // 
-            // label1
+            // SystemVersion
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(883, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Beta Version 1.0";
+            this.SystemVersion.AutoSize = true;
+            this.SystemVersion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.SystemVersion.ForeColor = System.Drawing.Color.White;
+            this.SystemVersion.Location = new System.Drawing.Point(696, 0);
+            this.SystemVersion.Name = "SystemVersion";
+            this.SystemVersion.Padding = new System.Windows.Forms.Padding(0, 6, 4, 0);
+            this.SystemVersion.Size = new System.Drawing.Size(374, 19);
+            this.SystemVersion.TabIndex = 0;
+            this.SystemVersion.Text = "©️ 2022 Brother Industries (Philippines) Inc. | Developed by: BPS | Version 1.0";
             // 
             // ReportDropdownTimer
             // 
@@ -710,21 +760,22 @@
             // 
             // MainPanel
             // 
-            this.MainPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MainPanel.BackColor = System.Drawing.SystemColors.Window;
             this.MainPanel.Controls.Add(this.ChangePasswordPanel);
             this.MainPanel.Controls.Add(this.pictureBox3);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(255, 82);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(977, 505);
+            this.MainPanel.Size = new System.Drawing.Size(1070, 505);
             this.MainPanel.TabIndex = 5;
             // 
             // ChangePasswordPanel
             // 
+            this.ChangePasswordPanel.BackColor = System.Drawing.SystemColors.Window;
             this.ChangePasswordPanel.Controls.Add(this.panel5);
             this.ChangePasswordPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ChangePasswordPanel.Location = new System.Drawing.Point(693, 0);
+            this.ChangePasswordPanel.Location = new System.Drawing.Point(786, 0);
             this.ChangePasswordPanel.Name = "ChangePasswordPanel";
             this.ChangePasswordPanel.Size = new System.Drawing.Size(284, 505);
             this.ChangePasswordPanel.TabIndex = 0;
@@ -734,17 +785,54 @@
             // 
             this.panel5.BackgroundImage = global::MHMS.Properties.Resources.dialog_box__2_;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Controls.Add(this.SwitchAccountButton);
+            this.panel5.Controls.Add(this.LogoutButton);
             this.panel5.Controls.Add(this.ChangePasswordButton);
             this.panel5.Controls.Add(this.UserSection);
             this.panel5.Controls.Add(this.UserLoginName);
             this.panel5.Controls.Add(this.UserPicture);
             this.panel5.Location = new System.Drawing.Point(3, -3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(261, 174);
+            this.panel5.Size = new System.Drawing.Size(261, 257);
             this.panel5.TabIndex = 0;
+            // 
+            // SwitchAccountButton
+            // 
+            this.SwitchAccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.SwitchAccountButton.FlatAppearance.BorderSize = 0;
+            this.SwitchAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SwitchAccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SwitchAccountButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.SwitchAccountButton.Image = global::MHMS.Properties.Resources.switch__1___1_;
+            this.SwitchAccountButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SwitchAccountButton.Location = new System.Drawing.Point(15, 146);
+            this.SwitchAccountButton.Name = "SwitchAccountButton";
+            this.SwitchAccountButton.Size = new System.Drawing.Size(230, 34);
+            this.SwitchAccountButton.TabIndex = 7;
+            this.SwitchAccountButton.Text = "SWITCH ACCOUNT";
+            this.SwitchAccountButton.UseVisualStyleBackColor = false;
+            this.SwitchAccountButton.Click += new System.EventHandler(this.SwitchAccountButton_Click);
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.LogoutButton.FlatAppearance.BorderSize = 0;
+            this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.LogoutButton.Image = global::MHMS.Properties.Resources.logout__2_;
+            this.LogoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogoutButton.Location = new System.Drawing.Point(15, 185);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(230, 34);
+            this.LogoutButton.TabIndex = 6;
+            this.LogoutButton.Text = "LOGOUT";
+            this.LogoutButton.UseVisualStyleBackColor = false;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // ChangePasswordButton
             // 
+            this.ChangePasswordButton.FlatAppearance.BorderSize = 0;
             this.ChangePasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChangePasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChangePasswordButton.Image = global::MHMS.Properties.Resources.key_32;
@@ -765,9 +853,9 @@
             this.UserSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(255)))));
             this.UserSection.Location = new System.Drawing.Point(88, 66);
             this.UserSection.Name = "UserSection";
-            this.UserSection.Size = new System.Drawing.Size(66, 17);
+            this.UserSection.Size = new System.Drawing.Size(81, 17);
             this.UserSection.TabIndex = 4;
-            this.UserSection.Text = "Full Name";
+            this.UserSection.Text = "User Section";
             // 
             // UserLoginName
             // 
@@ -805,7 +893,7 @@
             this.pictureBox3.Image = global::MHMS.Properties.Resources.MHMH_Login_Logo;
             this.pictureBox3.Location = new System.Drawing.Point(174, 67);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(623, 366);
+            this.pictureBox3.Size = new System.Drawing.Size(716, 366);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
@@ -824,13 +912,21 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 614);
+            this.ClientSize = new System.Drawing.Size(1325, 614);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.FooterPanel);
             this.Controls.Add(this.ShadowPanel);
@@ -852,12 +948,15 @@
             this.TopBarPanel.ResumeLayout(false);
             this.TopBarPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Icon)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateSystemButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotificationBellButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.FooterPanel.ResumeLayout(false);
             this.FooterPanel.PerformLayout();
@@ -901,14 +1000,13 @@
         private System.Windows.Forms.Button SettingsButton;
         private System.Windows.Forms.Button TargetSettingButton;
         private System.Windows.Forms.Timer SettingDropdownTimer;
-        private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label SystemVersion;
         private System.Windows.Forms.PictureBox Icon;
         private System.Windows.Forms.Label DateTimeLabel;
         private System.Windows.Forms.Timer DateAndTime;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox NotificationBellButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button InitialNameButton;
         private System.Windows.Forms.Panel ChangePasswordPanel;
@@ -924,7 +1022,15 @@
         private System.Windows.Forms.Timer ApplicationDropdownTimer;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox TruobleChecksheetButton;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label NotifCount;
+        private System.Windows.Forms.Button LogoutButton;
+        private System.Windows.Forms.Label AccountTypeLabel;
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button SwitchAccountButton;
+        private System.Windows.Forms.PictureBox UpdateSystemButton;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

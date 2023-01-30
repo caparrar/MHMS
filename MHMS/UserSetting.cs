@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,12 +16,19 @@ namespace MHMS
 {
     public partial class UserSetting : Form
     {
+        // Connection string
         static string MHMS_Conn = ConfigurationManager.ConnectionStrings["MHMS.Properties.Settings.MHMS"].ConnectionString;
+        //static string MHMS_Conn = ConfigurationManager.ConnectionStrings["MHMS.Properties.Settings.MHMS2"].ConnectionString;
+
+        // SQL Connection
+        SqlConnection con = new SqlConnection(MHMS_Conn);
 
         public UserSetting()
         {
             InitializeComponent();
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         //Drag Form ------------------>
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -35,9 +43,12 @@ namespace MHMS
         }
         // <---------------------------
 
+        //====================================================================================================================>>>>>>>>>>>>
 
         private void UserSetting_Load(object sender, EventArgs e)
         {
+            FirstName.Focus();
+
             Section.Text = Forms.ApproverSettingForm.userSection;
 
             LoadAllUsers(); // ---> Calling function to load all users
@@ -49,21 +60,25 @@ namespace MHMS
             }
         }
 
+        //====================================================================================================================>>>>>>>>>>>>
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //====================================================================================================================>>>>>>>>>>>>
+
         private void LoadAllUsers()
         {
             // -> SQL query to select User Account
-            SqlConnection con = new SqlConnection(MHMS_Conn);
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }
+
             SqlCommand LoadUsersPIC = new SqlCommand("SP_LoadUsersPIC", con);
             LoadUsersPIC.CommandType = CommandType.StoredProcedure;
+            LoadUsersPIC.Parameters.AddWithValue("@Procedure", "SelectUserAccount");
             LoadUsersPIC.Parameters.AddWithValue("@Section", Section.Text.Replace("BIPH-", ""));
             SqlDataAdapter sda = new SqlDataAdapter(LoadUsersPIC);
             DataTable dt = new DataTable();
@@ -71,6 +86,8 @@ namespace MHMS
             UsersDataGrid.DataSource = dt;
             con.Close();
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         string MHPIC_Value = "";
         string COPQPIC_Value = "";
@@ -84,13 +101,22 @@ namespace MHMS
         // --> Function for adding section in database
         private void AddNewUser()
         {
-            if (label2.Text == "" || FirstName.Text == "" || LastName.Text == "")
+            //Regular expression for email validation
+            Regex regex = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+            bool isValid = regex.IsMatch(Email.Text.Trim());
+            // <------
+
+            if (ADID.Text == "" || Email.Text == "" || FirstName.Text == "" || LastName.Text == "")
             {
                 MessageBox.Show("Please fill-in all fields.");
             }
             else if (MHPICCheckBox.Checked == false && COPQPICCheckBox.Checked == false && PCPICCheckBox.Checked == false && SupervisorCheckBox.Checked == false && ManagerCheckBox.Checked == false && GeneralMangerCheckBox.Checked == false && BILSupportCheckBox.Checked == false && COPQProcessInChargeCheckBox.Checked == false)
             {
                 MessageBox.Show("User type is required. Please select user type atleast one.");
+            }
+            else if (!isValid)
+            {
+                MessageBox.Show("Invalid email address.");
             }
             else
             {
@@ -166,18 +192,19 @@ namespace MHMS
                     COPQProcessInCharge_Value = "";
                 }
 
-                // -> SQL query to insert Section to Approver setting
-                SqlConnection con = new SqlConnection(MHMS_Conn);
+               
+                // -> SQL query to insert user account
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
+
                 SqlCommand InsertUSer = new SqlCommand("SP_InsertUser", con);
                 InsertUSer.CommandType = CommandType.StoredProcedure;
                 InsertUSer.Parameters.AddWithValue("@FirstName", FirstName.Text);
                 InsertUSer.Parameters.AddWithValue("@LastName", LastName.Text);
                 InsertUSer.Parameters.AddWithValue("@ADID", ADID.Text);
-                InsertUSer.Parameters.AddWithValue("@Email", (FirstName.Text + "." + LastName.Text + "@brother-biph.com.ph").ToLower().Replace(" ", ""));
+                InsertUSer.Parameters.AddWithValue("@Email", Email.Text);
                 InsertUSer.Parameters.AddWithValue("@Password", ADID.Text);
                 InsertUSer.Parameters.AddWithValue("@Section", Section.Text);
                 InsertUSer.Parameters.AddWithValue("@AccountType", "USER");
@@ -190,19 +217,22 @@ namespace MHMS
                 InsertUSer.Parameters.AddWithValue("@GeneralManager", GeneralManager_Value);
                 InsertUSer.Parameters.AddWithValue("@BILSupport", BILSupport_Value);
                 InsertUSer.Parameters.AddWithValue("@COPQProcessInCharge", COPQProcessInCharge_Value);
-
+                InsertUSer.Parameters.AddWithValue("@DateCreated", DateTime.Now.ToString());
                 InsertUSer.ExecuteNonQuery();
                 con.Close();
 
                 MessageBox.Show("User Successfuly Added!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // ---> Clear inputed data in textbox
-                ADID.Text = "";
-                FirstName.Text = "";
-                LastName.Text = "";
+                ADID.Clear();
+                Email.Clear();
+                FirstName.Clear();
+                LastName.Clear();
             }
 
         } // --> End of Function
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         // ---> Unchecked all selected checkboxes
         private void UncheckedSelectedUserType()
@@ -217,12 +247,15 @@ namespace MHMS
             COPQProcessInChargeCheckBox.Checked = false;
         }// <---
 
+        //====================================================================================================================>>>>>>>>>>>>
         private void AddUserButton_Click(object sender, EventArgs e)
         {
             AddNewUser();
             UncheckedSelectedUserType();
             LoadAllUsers();
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
 
         //initialized variable use to store data from datagrid
         string ID = "";
@@ -236,6 +269,8 @@ namespace MHMS
             Last_Name = UsersDataGrid.Rows[e.RowIndex].Cells["Last Name"].Value.ToString();
         }
 
+        //====================================================================================================================>>>>>>>>>>>>
+
         // ---> Delete user function
         private void DeleteUser()
         {
@@ -244,11 +279,11 @@ namespace MHMS
             if (dialogResult == DialogResult.Yes)
             {
                 // -> SQL query to delete Section to user setting
-                SqlConnection con = new SqlConnection(MHMS_Conn);
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
+
                 SqlCommand InsertUSer = new SqlCommand("SP_DeleteUser", con);
                 InsertUSer.CommandType = CommandType.StoredProcedure;
                 InsertUSer.Parameters.AddWithValue("@ADID", ID);
@@ -262,10 +297,34 @@ namespace MHMS
 
         } // --> End of Function
 
+        //====================================================================================================================>>>>>>>>>>>>
+
         private void DeleteUserButton_Click(object sender, EventArgs e)
         {
             DeleteUser();
             LoadAllUsers();
         }
+
+        //====================================================================================================================>>>>>>>>>>>>
+
+        private void FirstName_TextChanged(object sender, EventArgs e)
+        {
+            Email.Text = (FirstName.Text).ToLower().Replace(" ", "") + "." + (LastName.Text).ToLower().Replace(" ", "") + "@brother-biph.com.ph";
+        }
+
+        //====================================================================================================================>>>>>>>>>>>>
+
+        private void LastName_TextChanged(object sender, EventArgs e)
+        {
+            Email.Text = (FirstName.Text).ToLower().Replace(" ", "") + "." + (LastName.Text).ToLower().Replace(" ", "") + "@brother-biph.com.ph";
+        }
+
+        private void TopPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        //====================================================================================================================>>>>>>>>>>>>
+
     }
 }

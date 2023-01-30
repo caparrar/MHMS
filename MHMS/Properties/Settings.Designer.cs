@@ -26,11 +26,22 @@ namespace MHMS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=APBIPH1131;Initial Catalog=MH_Management_System;Integrated Security=T" +
-            "rue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=APBIPH1131;Initial Catalog=MH_Management_System;Integrated Security=F" +
+            "alse ;User ID =MH_User; Password =P@ssw0rd;MultipleActiveResultSets=true;")]
         public string MHMS {
             get {
                 return ((string)(this["MHMS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.248.1.121;Initial Catalog=MH_Management_System;Persist Security In" +
+            "fo=True;User ID=MH_User;Password=P@ssw0rd")]
+        public string MHMS2 {
+            get {
+                return ((string)(this["MHMS2"]));
             }
         }
     }
